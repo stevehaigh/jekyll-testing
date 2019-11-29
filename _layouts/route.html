@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+<h1>
+  {{ page.title }}
+</h1>
+
+{{ content }}
+
+<!-- set up pagination -->
+{% assign prevflag = 1 %}
+{% assign nextflag = 1 %}
+
+
+{% for route in site.routes %}
+  {% if route.title == page.title %}
+    {% assign currentItemIndex = forloop.index0 %}
+    {% if forloop.index == 1 %}
+      {% assign prevflag = 0 %}
+      {% assign nextflag = 1 %}
+    {% elsif forloop.index == forloop.length %}
+      {% assign prevflag = 1 %}
+      {% assign nextflag = 0 %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% if prevflag == 1 %}
+{% assign prevItemIndex = currentItemIndex | minus: 1 %}
+{% assign prevPost = site.routes[prevItemIndex] %}
+{% endif %}
+
+{% if nextflag == 1 %}
+{% assign nextItemIndex = currentItemIndex | plus: 1 %}
+{% assign nextPost = site.routes[nextItemIndex] %}
+{% endif %}
+
+<!-- Pagination links -->
+<div id="post-nav">
+  {% if prevPost.url and prevflag == 1%}
+  <a class="pagination-button pagination-active" rel="prev" href="{{ prevPost.url }}">
+    <span>Previous</span>
+  </a>
+  {% endif %}
+  {% if nextPost.url and nextflag == 1 %}
+  <a class="pagination-button pagination-active next" rel="next" href="{{ nextPost.url }}">
+    <span>Next</span>
+  </a>
+  {% endif %}
+</div>

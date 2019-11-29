@@ -3,34 +3,17 @@ layout: default
 title: Home
 ---
 
-{% for post in paginator.posts %}
-<div class="posts">
-  <h1>
-    <a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a>
-  </h1>
-  {% if post.image %}
-  <div class="thumbnail-container">
-    <a href="{{ site.github.url }}{{ post.url }}"><img src="{{ site.github.url }}/assets/img/{{ post.image }}"></a>
-  </div>
-  {% endif %}
-  <p>
-    {{ post.content | strip_html | truncate: 350 }} <a href="{{ site.github.url }}{{ post.url }}">Read more</a>
-    <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date_to_string }} - <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span>
-  </p>
+<div class="container">My take on the best ski runs in the Alps. This idea is inspired by the book <a href="http://www.50classicskidescents.com/">50 Classic Ski Descents of North America</a>.</div>
+<br>
+
+<div class="container">The selection is entirely subjective and is very much a work in progress. Classic routes include pistes runs, lift-accessed off-piste, lines that need to be hiked, multi day ski tours and anything else I can think of.
+This is not a guide, I don't give grades or any kind of accurate assessement, and I certainly don't claim to have skied them all. It's just a bit of fun and I'd love to add more routes to the list, so please feel free to contribute.</div>
+
+<h2>The routes!</h2>
+<div class="container">These are the routes. There aren't quite 50. Yet. </div>
+
+{% for route in site.routes %}
+<div>
+    <h3><a href="{{ route.url }}">{{ route.title }}</a> <small>{{route.resort}}, {{route.country | capitalize}}</small></h3>
 </div>
 {% endfor %}
-
-<!-- Pagination links -->
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-button pagination-active next" href="{{ site.github.url }}{{ paginator.next_page_path }}">{{ site.data.settings.pagination.previous_page }}</a>
-  {% else %}
-    <span class="pagination-button">{{ site.data.settings.pagination.previous_page }}</span>
-  {% endif %}
-
-  {% if paginator.previous_page %}
-    <a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.previous_page_path }}">{{ site.data.settings.pagination.next_page }}</a>
-  {% else %}
-    <span class="pagination-button">{{ site.data.settings.pagination.next_page }}</span>
-  {% endif %}
-</div>

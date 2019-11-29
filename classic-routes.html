@@ -1,0 +1,11 @@
+---
+layout: default
+title: "50 Classic routes of the Alps"
+permalink: 50Classic.html
+---
+
+{% for route in site.routes %}
+<div>
+    <h2><a href="{{ route.url }}">{{ route.title }}</a></h2> {{route.resort}}, {{route.country | capitalize}}
+</div>
+{% endfor %}

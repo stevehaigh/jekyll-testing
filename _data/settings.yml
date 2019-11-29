@@ -8,22 +8,17 @@ google-ID: ''
 
 menu:
 - {name: 'About', path: 'menu', url: 'about.html'}
-- {name: 'Writing', path: 'menu', url: 'writing.html'}
 - {name: 'Contact', path: 'menu', url: 'contact.html'}
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
-- {icon: 'github', link: 'https://www.github.com/stevehaigh'}
-- {icon: 'twitter', link: 'https://twitter.com/stevehaigh'}
-- {icon: 'linkedin', link: 'http://www.linkedin.com/in/shaigh/'}
 - {icon: 'envelope', link: 'mailto:l.steve.haigh@gmail.com'}
-- {icon: 'rss-square', link: '/feed.xml'}
 # - {icon: 'rss-square', link: '/rss-feed.xml'}
 
 # Customize site text
-pagination:
-  next_page: 'Newer'
-  previous_page: 'Older'
+##pagination:
+ ## next_page: 'More'
+ ## previous_page: 'Back'
 
 sharing_button_prompt: 'Feel free to share!'
 
