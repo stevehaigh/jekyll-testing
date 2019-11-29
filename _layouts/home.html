@@ -14,6 +14,6 @@ This is not a guide, I don't give grades or any kind of accurate assessement, an
 
 {% for route in site.routes %}
 <div>
-    <h3><a href="{{ route.url }}">{{ route.title }}</a> <small>{{route.resort}}, {{route.country | capitalize}}</small></h3>
+    <h3><a href="{{site.github.url }}/{{ route.url }}">{{ route.title }}</a> <small>{{route.resort}}, {{route.country | capitalize}}</small></h3>
 </div>
 {% endfor %}

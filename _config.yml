@@ -23,6 +23,7 @@ plugins:             [jekyll-paginate-v2, jekyll-sitemap, jekyll-feed, jekyll-se
 collections:
   routes:
     output: true
+    permalink: /:collection/:title
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title:		           '50 Classic Ski Descents of the Alps'
