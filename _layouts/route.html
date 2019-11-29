@@ -43,6 +43,11 @@ layout: default
     <span>Previous</span>
   </a>
   {% endif %}
+ .
+  <a class="pagination-button pagination-active" rel="prev" href="{{ site.github.url }}/">
+      <span>Back to the list</span>
+  </a>
+  .
   {% if nextPost.url and nextflag == 1 %}
   <a class="pagination-button pagination-active next" rel="next" href="{{ site.github.url }}{{ nextPost.url }}">
     <span>Next</span>
