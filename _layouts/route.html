@@ -39,12 +39,12 @@ layout: default
 <!-- Pagination links -->
 <div id="post-nav">
   {% if prevPost.url and prevflag == 1%}
-  <a class="pagination-button pagination-active" rel="prev" href="{{_site.github.url }}/{{ prevPost.url }}">
+  <a class="pagination-button pagination-active" rel="prev" href="{{ site.github.url }}{{ prevPost.url }}">
     <span>Previous</span>
   </a>
   {% endif %}
   {% if nextPost.url and nextflag == 1 %}
-  <a class="pagination-button pagination-active next" rel="next" href="{{_site.github.url }}/{{ nextPost.url }}">
+  <a class="pagination-button pagination-active next" rel="next" href="{{ site.github.url }}{{ nextPost.url }}">
     <span>Next</span>
   </a>
   {% endif %}
